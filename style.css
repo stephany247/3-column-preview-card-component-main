@@ -17,6 +17,7 @@
 /* Page */
 body {
   min-height: 100vh;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -36,6 +37,7 @@ body {
   min-height: 31.25rem;
   border-radius: 0.5rem;
   overflow: hidden;
+  margin-bottom: 1rem;
 }
 
 /* Individual cards */
@@ -129,22 +131,38 @@ body {
 
 /* Footer attribution */
 .attribution {
-  width: 100%;
-  margin-top: 1.5rem;
-  font-size: 0.6875rem;
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 32px);
   text-align: center;
-  line-height: 1.6;
+  color: var(--green);
+  line-height: 1.8;
 }
 
 .attribution a {
-  color: hsl(228, 45%, 44%);
+  color: var(--cyan);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity 0.2s ease;
+}
+
+.attribution a:hover {
+  opacity: 0.75;
+}
+
+.attribution a:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
 }
 
 /* Tablet and mobile */
 @media (max-width: 48rem) {
   body {
     justify-content: flex-start;
-    padding: 5.5rem 1.5rem 3rem;
+    padding: 5.5rem 1.5rem;
   }
 
   .container {
@@ -161,10 +179,6 @@ body {
 
   .btn {
     padding: 0 1.875rem;
-  }
-
-  .attribution {
-    max-width: 20.4375rem;
   }
 }
 
