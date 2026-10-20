@@ -1,122 +1,157 @@
-# Frontend Mentor - 3-column preview card component solution
+# Frontend Mentor - 3-column Preview Card Component
 
-This is a solution to the [3-column preview card component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/3column-preview-card-component-pH92eAR2-). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is my solution to the [3-column preview card component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/3column-preview-card-component-pH92eAR2-). This project helped me practice building responsive layouts with HTML and CSS while matching a provided design.
 
-## Table of contents
+## Table of Contents
 
 - [Overview](#overview)
-  - [The challenge](#the-challenge)
+  - [The Challenge](#the-challenge)
   - [Screenshot](#screenshot)
   - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
+- [My Process](#my-process)
+  - [Built With](#built-with)
+  - [What I Learned](#what-i-learned)
+  - [Continued Development](#continued-development)
+  - [Useful Resources](#useful-resources)
   - [AI Collaboration](#ai-collaboration)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
-
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
-### The challenge
+### The Challenge
+
+The goal was to build a three-column preview card component that closely matches the provided design.
 
 Users should be able to:
 
-- View the optimal layout depending on their device's screen size
-- See hover states for interactive elements
+- View the layout adapted to their device's screen size.
+- See hover states for interactive elements.
+- Read the card content comfortably on desktop and mobile screens.
 
 ### Screenshot
 
-![](./screenshot.jpg)
+#### Desktop View
 
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
+![Desktop screenshot](./images/screencapture-desktop.png)
 
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
+#### Mobile View
 
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
+![Mobile screenshot](./images/screencapture-mobile.png)
 
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- **Github Repo URL:** [Github Repo URL here](https://github.com/stephany247/3-column-preview-card-component-main).
+- **Live Site URL:** [Live Demo here](https://stephany247.github.io/3-column-preview-card-component-main/).
 
-## My process
+## My Process
 
-### Built with
+### Built With
 
-- Semantic HTML5 markup
-- CSS custom properties
+- Semantic HTML5
+- CSS custom properties (variables)
 - Flexbox
-- CSS Grid
-- Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
+- Responsive design using media queries
+- REM units for spacing and sizing
+- Google Fonts
+- CSS transitions and pseudo-classes
+- Keyboard accessibility with `:focus-visible`
+- Mobile and desktop design references
 
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+### What I Learned
 
-### What I learned
+This project helped me improve my understanding of responsive layouts, Flexbox, CSS spacing, and interactive states.
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+**1. Building responsive layouts with Flexbox**
 
-To see how you can add code snippets, see below:
+I used Flexbox to arrange the cards horizontally on larger screens and stack them vertically on smaller screens.
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+.container {
+  display: flex;
+  width: 100%;
+}
+
+@media (max-width: 62rem) {
+  .container {
+    flex-direction: column;
+  }
 }
 ```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
+
+**2. Using CSS custom properties**
+
+I defined the project's color palette using CSS variables, making the styles easier to maintain and update.
+
+```css
+:root {
+  --gold: hsl(31, 77%, 52%);
+  --cyan: hsl(184, 100%, 22%);
+  --green: hsl(179, 100%, 13%);
+  --paragraph: hsla(0, 0%, 100%, 0.75);
+  --light-gray: hsl(0, 0%, 95%);
 }
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+**3. Working with REM units**
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+I converted fixed pixel measurements to REM units to make spacing and sizing more consistent and responsive to the root font size.
 
-### Continued development
+**4. Creating interactive button states**
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+I used CSS transitions to create a smooth hover effect and added a visible focus state for keyboard users.
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+```css
+.btn {
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
 
-### Useful resources
+.btn:hover {
+  color: var(--light-gray);
+  background-color: transparent;
+}
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+.btn:focus-visible {
+  outline: 0.125rem solid var(--light-gray);
+  outline-offset: 0.25rem;
+}
+```
 
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+**5. Positioning the attribution**
+
+I learned how positioning and document flow affect the footer's placement across different screen sizes. The goal was to keep the attribution at the bottom of the viewport when space permits, while allowing it to follow the cards naturally on smaller screens.
+
+### Continued Development
+
+In future projects, I want to continue improving my skills in:
+
+- Building accessible and responsive interfaces.
+- Writing cleaner, more maintainable CSS.
+- Choosing appropriate breakpoints based on content.
+- Improving visual accuracy when translating design references into code.
+- Testing layouts across different screen sizes and browsers.
+
+### Useful Resources
+
+- [Frontend Mentor](https://www.frontendmentor.io/) - Provided the design challenge and reference images.
+- [MDN Web Docs: CSS Flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout) - Helped me understand flexible layouts.
+- [MDN Web Docs: CSS Media Queries](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries) - Useful for implementing responsive behavior.
+- [Google Fonts](https://fonts.google.com/) - Used to load Lexend Deca and Big Shoulders.
 
 ### AI Collaboration
 
-Describe how you used AI tools (if any) during this project. This helps demonstrate your ability to work effectively with AI assistants.
+I used ChatGPT as a development assistant during this project.
 
-- What tools did you use (e.g., ChatGPT, Claude, GitHub Copilot)?
-- How did you use them (e.g., debugging, generating boilerplate, brainstorming solutions)?
-- What worked well? What didn't?
+- **Implementation support:** Helped structure and refine the HTML and CSS.
+- **Responsive design:** Assisted with adjusting the card layout and spacing across screen sizes.
+- **Code refinement:** Helped convert pixel values to REM units and organize the attribution styles.
+- **Learning:** Helped explain CSS positioning, Flexbox behavior, hover effects, and keyboard focus states.
 
-**Note: Delete this note and the content above if you didn't use AI, or replace with your own experience.**
+I reviewed and adapted the suggestions to fit the project and used the process to improve my understanding of CSS.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- Frontend Mentor - [@stephany247](https://www.frontendmentor.io/profile/stephany247)
 
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
