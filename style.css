@@ -1,0 +1,201 @@
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Colors */
+:root {
+  --gold: hsl(31, 77%, 52%);
+  --cyan: hsl(184, 100%, 22%);
+  --green: hsl(179, 100%, 13%);
+  --paragraph: hsla(0, 0%, 100%, 0.75);
+  --light-gray: hsl(0, 0%, 95%);
+}
+
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 24px;
+  background-color: var(--light-gray);
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  /* max-width: 920px; */
+  min-height: 500px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Individual cards */
+.card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 28px;
+  padding: 48px;
+}
+
+.sedans {
+  background-color: var(--gold);
+}
+
+.suvs {
+  background-color: var(--cyan);
+}
+
+.luxury {
+  background-color: var(--green);
+}
+
+/* Car icons */
+.car-icon {
+  display: block;
+  width: 64px;
+  height: 40px;
+  object-fit: contain;
+}
+
+/* Headings */
+.card h1 {
+  color: var(--light-gray);
+  font-family: "Big Shoulders", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+ 
+}
+
+/* Paragraphs */
+.card p {
+  color: var(--paragraph);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 32px;
+  margin-top: auto;
+  border: 2px solid var(--light-gray);
+  border-radius: 50px;
+  background-color: var(--light-gray);
+  text-decoration: none;
+  font-family: "Lexend Deca", sans-serif;
+  white-space: nowrap;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+.sedans .btn {
+  color: var(--gold);
+}
+
+.suvs .btn {
+  color: var(--cyan);
+}
+
+.luxury .btn {
+  color: var(--green);
+}
+
+/* Button hover effect */
+.btn:hover {
+  color: var(--light-gray);
+  background-color: transparent;
+}
+
+/* Keyboard accessibility */
+.btn:focus-visible {
+  outline: 2px solid var(--light-gray);
+  outline-offset: 4px;
+}
+
+/* Footer attribution */
+.attribution {
+  width: 100%;
+  margin-top: 24px;
+  font-size: 0.6875rem;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/* Tablet and mobile */
+@media (max-width: 768px) {
+  body {
+    justify-content: flex-start;
+    padding: 88px 24px 32px;
+  }
+
+  .container {
+    flex-direction: column;
+    /* min-width: 327px; */
+    min-height: auto;
+    border-radius: 6px;
+  }
+
+  .card {
+    flex: none;
+    min-height: 442px;
+    padding: 48px;
+  }
+
+  /* .car-icon {
+    margin-bottom: 36px;
+  } */
+
+  .card h1 {
+    font-size: 32px;
+    /* margin-bottom: 28px; */
+  }
+
+  .card p {
+    line-height: 1.65;
+    /* margin-bottom: 28px; */
+  }
+
+  .btn {
+    min-height: 48px;
+    padding: 0 30px;
+  }
+
+  .attribution {
+    max-width: 327px;
+  }
+}
+
+/* Smaller mobile screens */
+@media (max-width: 360px) {
+  body {
+    padding: 48px 16px 24px;
+  }
+
+  .container {
+    max-width: 100%;
+  }
+
+  .card {
+    padding: 36px;
+    min-height: 420px;
+  }
+}
