@@ -1,105 +1,157 @@
-# Frontend Mentor - 3-column preview card component
+# Frontend Mentor - 3-column Preview Card Component
 
-![Design preview for the 3-column preview card component coding challenge](preview.jpg)
+This is my solution to the [3-column preview card component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/3column-preview-card-component-pH92eAR2-). This project helped me practice building responsive layouts with HTML and CSS while matching a provided design.
 
-## Welcome! 👋
+## Table of Contents
 
-Thanks for checking out this front-end coding challenge.
+- [Overview](#overview)
+  - [The Challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My Process](#my-process)
+  - [Built With](#built-with)
+  - [What I Learned](#what-i-learned)
+  - [Continued Development](#continued-development)
+  - [Useful Resources](#useful-resources)
+  - [AI Collaboration](#ai-collaboration)
+- [Author](#author)
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
+## Overview
 
-**To do this challenge, you need a basic understanding of HTML and CSS.**
+### The Challenge
 
-## The challenge
+The goal was to build a three-column preview card component that closely matches the provided design.
 
-Your challenge is to build out this 3-column preview card component and get it looking as close to the design as possible.
+Users should be able to:
 
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
+- View the layout adapted to their device's screen size.
+- See hover states for interactive elements.
+- Read the card content comfortably on desktop and mobile screens.
 
-Your users should be able to:
+### Screenshot
 
-- View the optimal layout depending on their device's screen size
-- See hover states for interactive elements
+#### Desktop View
 
-### Want some support on the challenge? 
+![Desktop screenshot](./images/screencapture-desktop.png)
 
-[Join our community](https://www.frontendmentor.io/community) and ask questions in the **#help** channel.
+#### Mobile View
 
-## Where to find everything
+![Mobile screenshot](./images/screencapture-mobile.png)
 
-Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design.
 
-The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`.
+### Links
 
-If you would like the Figma design file to inspect the design in more detail, you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
+- **Github Repo URL:** [Github Repo URL here](https://github.com/stephany247/3-column-preview-card-component-main).
+- **Live Site URL:** [Live Demo here](https://stephany247.github.io/3-column-preview-card-component-main/).
 
-You will find all the required assets in the `/images` folder. The assets are already optimized.
+## My Process
 
-There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
+### Built With
 
-## Using AI coding assistants
+- Semantic HTML5
+- CSS custom properties (variables)
+- Flexbox
+- Responsive design using media queries
+- REM units for spacing and sizing
+- Google Fonts
+- CSS transitions and pseudo-classes
+- Keyboard accessibility with `:focus-visible`
+- Mobile and desktop design references
 
-We've included two files to help you if you're using AI coding assistants (like Claude, GitHub Copilot, Cursor, etc.) while working on this challenge:
+### What I Learned
 
-- `AGENTS.md` - Contains detailed instructions for AI assistants on how to help you with this challenge. It's tailored to this challenge's difficulty level, so the AI will provide guidance appropriate to your learning stage—offering more support for beginner challenges and encouraging more independence on advanced ones.
-- `CLAUDE.md` - A pointer file that directs Claude-based tools to the AGENTS.md instructions.
+This project helped me improve my understanding of responsive layouts, Flexbox, CSS spacing, and interactive states.
 
-**How to use them:** You don't need to do anything! These files are automatically detected by most AI coding tools. The AI will read them and adjust its behavior to be a better learning partner—guiding you toward solutions rather than just giving you the answers.
+**1. Building responsive layouts with Flexbox**
 
-**Note:** These files are designed to help you *learn*, not to do the work for you. The AI is instructed to ask questions, give hints, and explain concepts rather than writing complete solutions.
+I used Flexbox to arrange the cards horizontally on larger screens and stack them vertically on smaller screens.
 
-## Building your project
+```css
+.container {
+  display: flex;
+  width: 100%;
+}
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+@media (max-width: 62rem) {
+  .container {
+    flex-direction: column;
+  }
+}
+```
 
-1. Initialize your project as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+**2. Using CSS custom properties**
 
-## Deploying your project
+I defined the project's color palette using CSS variables, making the styles easier to maintain and update.
 
-As mentioned above, there are many ways to host your project for free. Our recommended hosts are:
+```css
+:root {
+  --gold: hsl(31, 77%, 52%);
+  --cyan: hsl(184, 100%, 22%);
+  --green: hsl(179, 100%, 13%);
+  --paragraph: hsla(0, 0%, 100%, 0.75);
+  --light-gray: hsl(0, 0%, 95%);
+}
+```
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+**3. Working with REM units**
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://www.frontendmentor.io/guides/hosting-your-solution).
+I converted fixed pixel measurements to REM units to make spacing and sizing more consistent and responsive to the root font size.
 
-## Create a custom `README.md`
+**4. Creating interactive button states**
 
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
+I used CSS transitions to create a smooth hover effect and added a visible focus state for keyboard users.
 
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
+```css
+.btn {
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
 
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
+.btn:hover {
+  color: var(--light-gray);
+  background-color: transparent;
+}
 
-## Submitting your solution
+.btn:focus-visible {
+  outline: 0.125rem solid var(--light-gray);
+  outline-offset: 0.25rem;
+}
+```
 
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://www.frontendmentor.io/guides/how-to-submit-solutions) for tips on how to do this.
+**5. Positioning the attribution**
 
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
+I learned how positioning and document flow affect the footer's placement across different screen sizes. The goal was to keep the attribution at the bottom of the viewport when space permits, while allowing it to follow the cards naturally on smaller screens.
 
-## Sharing your solution
+### Continued Development
 
-There are multiple places you can share your solution:
+In future projects, I want to continue improving my skills in:
 
-1. Share your solution page in the **#finished-projects** channel of the [community](https://www.frontendmentor.io/community). 
-2. Share on [X (formerly Twitter)](https://x.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in your post. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on [LinkedIn](https://www.linkedin.com/company/frontend-mentor/).
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
+- Building accessible and responsive interfaces.
+- Writing cleaner, more maintainable CSS.
+- Choosing appropriate breakpoints based on content.
+- Improving visual accuracy when translating design references into code.
+- Testing layouts across different screen sizes and browsers.
 
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback.
+### Useful Resources
 
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
+- [Frontend Mentor](https://www.frontendmentor.io/) - Provided the design challenge and reference images.
+- [MDN Web Docs: CSS Flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout) - Helped me understand flexible layouts.
+- [MDN Web Docs: CSS Media Queries](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries) - Useful for implementing responsive behavior.
+- [Google Fonts](https://fonts.google.com/) - Used to load Lexend Deca and Big Shoulders.
 
-## Got feedback for us?
+### AI Collaboration
 
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
+I used ChatGPT as a development assistant during this project.
 
-This challenge is completely free. Please share it with anyone who will find it useful for practice.
+- **Implementation support:** Helped structure and refine the HTML and CSS.
+- **Responsive design:** Assisted with adjusting the card layout and spacing across screen sizes.
+- **Code refinement:** Helped convert pixel values to REM units and organize the attribution styles.
+- **Learning:** Helped explain CSS positioning, Flexbox behavior, hover effects, and keyboard focus states.
 
-**Have fun building!** 🚀
+I reviewed and adapted the suggestions to fit the project and used the process to improve my understanding of CSS.
+
+## Author
+
+- Frontend Mentor - [@stephany247](https://www.frontendmentor.io/profile/stephany247)
+
